@@ -1,4 +1,4 @@
-# 可爾必思 2022 序號登錄活動
+# 可爾必思 威金森 2022 中秋節序號登錄活動
 
 nodejs-version：v12.14.0
 
@@ -11,16 +11,16 @@ Vue3、vue-cli4、vuex、scss、RWD、Google api、Facebook api
 https://www.asahisoftdrinks.com.tw/wilkinson_2022moonfestival/
 
 程式碼：<br>
-https://github.com/wowchiou/calpis-202202
+https://github.com/aaaaaaaallie/wilkinson_2022moonfestivallpis-202202
 
 首頁
-![1](https://user-images.githubusercontent.com/42172531/156995796-b1e32bdb-869b-419f-a317-9f8a354f3674.png)
+![1](https://user-images.githubusercontent.com/37163473/180384049-f27a108e-6ef7-4aed-b2bf-41fbe9f678d7.jpg)
 
 序號輸入
-![2](https://user-images.githubusercontent.com/42172531/156995933-c259cdbb-49f0-4a33-9eff-0cc9b3b2c5b4.png)
+![2](https://user-images.githubusercontent.com/37163473/180384095-11ff9ff8-8963-428e-8410-907e090815df.jpg)
 
 序號查詢
-![3](https://user-images.githubusercontent.com/42172531/156995804-d16076fa-9589-4a0d-8602-42983d8d566b.png)
+![3](https://user-images.githubusercontent.com/37163473/180384127-2cdd4908-b50e-4f46-bd96-1e1fcfd16da4.jpg)
 
 贈品兌換
-![4](https://user-images.githubusercontent.com/42172531/156995806-7cae3789-077e-478b-a563-8cb90ba5fc0c.png)
+![4](https://user-images.githubusercontent.com/37163473/180384164-7d830d22-86e5-412c-88c3-0bd4a0c80a2c.jpg)
