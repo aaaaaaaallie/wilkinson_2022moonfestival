@@ -76,61 +76,61 @@ export default {
   },
   methods: {
     initGoogleAuth() {
-      const that = this;
-      window.gapi.load('auth2', initAuth);
+      // const that = this;
+      // window.gapi.load('auth2', initAuth);
 
-      function initAuth() {
-        const googleConfig = helper.getGoogleAuthConfig();
-        window.gapi.auth2
-          .init(googleConfig)
-          .then(successInitAuth, failInitAuth);
+      // function initAuth() {
+      //   const googleConfig = helper.getGoogleAuthConfig();
+      //   window.gapi.auth2
+      //     .init(googleConfig)
+      //     .then(successInitAuth, failInitAuth);
 
-        function successInitAuth() {
-          that.$store.commit('auth/setGoogleInit');
-          that.checkGoogleStatus();
-        }
+      //   function successInitAuth() {
+      //     that.$store.commit('auth/setGoogleInit');
+      //     that.checkGoogleStatus();
+      //   }
 
-        function failInitAuth(err) {
-          console.log(err);
-          that.$store.dispatch('showLoader', false);
-        }
-      }
+      //   function failInitAuth(err) {
+      //     console.log(err);
+      //     that.$store.dispatch('showLoader', false);
+      //   }
+      // }
 
-        // const client = window.google.accounts.oauth2.initCodeClient({
-        //   client_id: '963317904971-aca4bgjqttfq1vmd67a78ib4goopal3j.apps.googleusercontent.com',
-        //   scope: 'https://www.googleapis.com/auth/calendar.readonly',
-        //   ux_mode: 'popup',
-        //   callback: (response) => {
-        //     console.log(response)
-        //     // var code_receiver_uri = 'YOUR_AUTHORIZATION_CODE_ENDPOINT_URI',
-        //     // // Send auth code to your backend platform
-        //     // const xhr = new XMLHttpRequest();
-        //     // xhr.open('POST', code_receiver_uri, true);
-        //     // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        //     // xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        //     // xhr.onload = function() {
-        //     //   console.log('Signed in as: ' + xhr.responseText);
-        //     // };
-        //     // xhr.send('code=' + code);
-        //     // // After receipt, the code is exchanged for an access token and
-        //     // // refresh token, and the platform then updates this web app
-        //     // // running in user's browser with the requested calendar info.
-        //   },
-        // });
+      window.google.accounts.oauth2.initCodeClient({
+        client_id: '963317904971-aca4bgjqttfq1vmd67a78ib4goopal3j.apps.googleusercontent.com',
+        scope: 'https://asahisoftdrinks.mg.megais.com/wilkinson_2022moonfestival/',
+        ux_mode: 'popup',
+        callback: (response) => {
+          console.log(response);
+          // var code_receiver_uri = 'YOUR_AUTHORIZATION_CODE_ENDPOINT_URI',
+          // // Send auth code to your backend platform
+          // const xhr = new XMLHttpRequest();
+          // xhr.open('POST', code_receiver_uri, true);
+          // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+          // xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+          // xhr.onload = function() {
+          //   console.log('Signed in as: ' + xhr.responseText);
+          // };
+          // xhr.send('code=' + code);
+          // // After receipt, the code is exchanged for an access token and
+          // // refresh token, and the platform then updates this web app
+          // // running in user's browser with the requested calendar info.
+        },
+      });
 
-      },
-
-    checkGoogleStatus() {
-      const auth2 = window.gapi.auth2.getAuthInstance();
-      this.$store.commit('auth/setAuth2', auth2);
-      const googleSignIn = auth2.isSignedIn.get();
-      if (googleSignIn) {
-        const googleUser = auth2.currentUser.get();
-        return this.$store.dispatch('auth/setGoogleAuth', { data: googleUser });
-      }
-      helper.removeStorageAuthData();
-      this.$store.dispatch('showLoader', false);
     },
+
+    // checkGoogleStatus() {
+    //   const auth2 = window.gapi.auth2.getAuthInstance();
+    //   this.$store.commit('auth/setAuth2', auth2);
+    //   const googleSignIn = auth2.isSignedIn.get();
+    //   if (googleSignIn) {
+    //     const googleUser = auth2.currentUser.get();
+    //     return this.$store.dispatch('auth/setGoogleAuth', { data: googleUser });
+    //   }
+    //   helper.removeStorageAuthData();
+    //   this.$store.dispatch('showLoader', false);
+    // },
   },
   mounted() {
     const that = this;
