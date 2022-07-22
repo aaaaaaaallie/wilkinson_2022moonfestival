@@ -1,0 +1,110 @@
+@import '@/assets/scss/vars/index.scss';
+
+.method {
+  padding-left: 4%;
+  padding-bottom: 5rem;
+  @media (max-width: 75em) {
+    padding-left: 0;
+  }
+}
+
+.method > .wrap {
+  width: 64.3%;
+  padding: 6rem 0 0;
+  @media (max-width: 75em) {
+    padding: 0 8%;
+    width: 100%;
+  }
+  @media (max-width: 40em) {
+    padding: 0 2.5rem;
+  }
+}
+
+.method .title {
+  @media (max-width: 75em) {
+    display: block;
+    margin: 3rem 0 1rem;
+    span {
+      border-bottom: 2px solid #ff2f37;
+      padding-bottom: 0.4rem;
+    }
+  }
+}
+
+.method .content {
+  margin: auto;
+  padding: 3rem 1.5rem 4rem;
+  border-top: 4px solid #ffff;
+  border-bottom: 4px solid #ffff;
+  @media (max-width: 75em) {
+    border-top: none;
+    border-bottom: none;
+  }
+}
+
+.method .subtitle,
+.method .text {
+  max-width: 740px;
+  margin: auto;
+}
+
+.method .text {
+  color: map-get($color, 'primary');
+  font-size: 1.8rem;
+  padding: 1.5rem 5% 3rem;
+  line-height: 1.5;
+  h3:first-child {
+    margin-top: 0;
+  }
+  .small_title {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    color: map-get($color, 'menuActive');
+  }
+  & > ul,
+  & > ol {
+    ol {
+      list-style: decimal;
+      padding-left: 2.5rem;
+    }
+    ul {
+      list-style: circle;
+      padding-left: 3rem;
+    }
+    a {
+      color: map-get($color, 'secondary');
+      display: inline;
+      word-wrap: break-word;
+    }
+  }
+  & > ul {
+    list-style: outside;
+    padding-left: 3rem;
+  }
+  & > ol {
+    list-style: cjk-ideographic;
+    list-style-position: inside;
+  }
+  .num_style {
+    list-style: outside;
+    list-style-type: decimal;
+  }
+  .brackets_style {
+    list-style: none;
+    li {
+      text-indent: -2.7rem;
+    }
+  }
+  li + li {
+    margin-top: 1rem;
+  }
+}
+
+.method .content .btns {
+  text-align: center;
+}
+
+.underline {
+  border-bottom: 0.2rem solid map-get($color, 'secondary');
+  line-height: 1.2;
+}

@@ -1,0 +1,27 @@
+@import '@/assets/scss/vars/index.scss';
+
+.bg {
+  position: fixed;
+  width: 100%;
+  height: calc(100vh - 76px);
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-image: url(~@/assets/images/bg-pc-1.png),url(~@/assets/images/bg-pc-2.png);
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto 92vh, auto 37vh;
+  background-position: bottom 100% right,bottom left;
+  @media (max-width: 75em) {
+    background-image: url(~@/assets/images/bg-pad-1.png),
+      url(~@/assets/images/bg-pc-3.jpg);
+    background-repeat: no-repeat, repeat;
+    background-size: 100% auto, auto auto;
+    background-position: bottom center, top center;
+    height: 100%;
+    // opacity: 0.8;
+    // top: 8.6rem;
+  }
+}

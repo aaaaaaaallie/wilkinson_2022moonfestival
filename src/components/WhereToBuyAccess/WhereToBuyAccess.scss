@@ -1,0 +1,51 @@
+@import '@/assets/scss/vars/index.scss';
+
+.channels .content .access {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  @media (max-width: 75rem) {
+    margin-left: -3rem;
+  }
+  // padding: 0 2rem;
+  // & + .access {
+  //   margin-top: 3rem;
+  // }
+  &:nth-child(3) {
+    .type {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+  }
+  .type {
+    font-size: 2.7rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding-right: 1.5rem;
+    margin-right: 1.5rem;
+    border-right: 1px solid map-get($color, 'primary');
+    line-height: 1;
+    min-width: 17.5rem;
+    text-align: right;
+    @media (max-width: 75em) {
+      font-size: 2.1rem;
+    }
+    span {
+      transform: translateY(-0.1rem);
+      display: inline;
+      width: 100%;
+    }
+  }
+  .store {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    span {
+      font-size: 2.6rem;
+      @media (max-width: 75em) {
+        font-size: 2.1rem;
+      }
+    }
+  }
+}

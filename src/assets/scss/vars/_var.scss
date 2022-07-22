@@ -1,0 +1,37 @@
+$color: (
+  primary: #ffffff,
+  subtitle: #febd00,
+  secondary: #e2272e,
+  light: #d73259,
+  deco: #d73259,
+  menuActive: #febd00,
+  slideBorder: #269e3d,
+  innerPageTitle: #ffffff,
+  btnBG: #6e090c,
+  btnBGHover: #e2272e,
+  contentBG: rgba(255, 255, 255, 0.75),
+  bodyBG: #000000,
+  headerBG: #6e090c,
+  error: #d61518,
+  titleNameBG: #269e3d,
+);
+
+// 1em = 16px
+$break-point: (
+  sp: '(max-width: 21.875em)',
+  phone: '(max-width: 40em)',
+  tablet: '(max-width: 60em)',
+  md3: '(max-width: 68.75em)',
+  md2: '(max-width: 78.75em)',
+  md1: '(max-width: 87.5em)',
+  wide: '(min-width: 120.0625em)',
+);
+
+$font-weight: (
+  thin: 100,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  bold: 700,
+  black: 900,
+);

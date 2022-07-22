@@ -1,0 +1,42 @@
+@import '@/assets/scss/vars/index.scss';
+
+.subtitle {
+  font-size: 2.5rem;
+  color: map-get($color, 'subtitle');
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  position: relative;
+  // margin-bottom: 0.5rem !important;
+  font-weight: 500;
+}
+
+.subtitle > span {
+  margin: 0 0.5rem;
+  position: relative;
+  text-align: center;
+  letter-spacing: 0.8rem;
+  padding-left: 0.8rem;
+}
+
+.subtitle::before {
+  display: inline-block;
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: map-get($color, 'subtitle');
+  border-radius: 50%;
+}
+
+// .subtitle::before,
+// .subtitle::after {
+//   content: '';
+//   display: block;
+//   flex: 1;
+//   height: 3px;
+//   background-color: map-get($color, 'primary');
+//   border-radius: 9999px;
+//   @media (max-width: 640px) {
+//     height: 2px;
+//   }
+// }

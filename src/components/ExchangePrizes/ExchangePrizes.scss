@@ -1,0 +1,116 @@
+@import '@/assets/scss/vars/index.scss';
+
+.exchange_page .remaining_points {
+  font-size: 2.42rem;
+  color: map-get($color, 'primary');
+  font-weight: 500;
+  letter-spacing: 1px;
+  // padding-left: 1px;
+  // text-align: center;
+  // margin-bottom: 3rem;
+  text-align: center;
+  // border-left: 3px solid #ffffff;
+  // padding: 1rem 0;
+  span {
+    font-weight: 700;
+    margin: 0 1rem;
+    color: #febd00;
+  }
+}
+
+#exchange_form {
+  margin-top: 2rem;
+}
+
+#exchange_form .input_group {
+  width: 82%;
+  // padding: 1.5rem 0;
+  @media (max-width: 75em) {
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+  @media (max-width: 40em) {
+    padding: 1.5rem 0.5rem;
+  }
+}
+
+#exchange_form .prize + .prize {
+  margin-top: 3rem;
+}
+
+#exchange_form > .btns {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 22.0625em) {
+  ::placeholder {
+    font-size: 1.8rem;
+  }
+}
+
+.user_remaining_point {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 4px solid #ffffff;
+  padding-bottom: 1rem;
+  @media (max-width: 75em) {
+    display: block;
+    border-bottom: none;
+  }
+  .username {
+    width: 40%;
+    border-right: 3px solid #ffffff;
+    padding: 1rem;
+    @media (max-width: 75em) {
+     width: 100%;
+     color: #ffffff;
+     border-right: none;
+    }
+  }
+  .remaining_points {
+    width: 60%;
+    @media (max-width: 75em) {
+      width: 100%;
+      background-color: rgba(98, 97, 97, 0.5);
+      font-size: 2rem;
+      text-align: center;
+      border-left: none;
+      margin: auto;
+      padding: 1rem 0;
+     }
+  }
+}
+
+.prize {
+  display: flex;
+  @media (max-width: 75em) {
+    display: block;
+  }
+}
+
+.table_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12.5rem;
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  @media (max-width: 75em) {
+    width: 100%;
+  }
+  &.lottery {
+    background-color: #ff2f37;
+    color: #ffffff;
+  }
+  &.exchange {
+    background-color: #febd00;
+    color: #000000;
+    br {
+      @media (max-width: 75em) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import '@/assets/scss/vars/index.scss';
+
+.pageTitle {
+  margin: 0 auto 2rem;
+  @media (max-width: 72em) {
+    display: none;
+  }
+  span {
+    color: map-get($color, 'innerPageTitle');
+    font-size: 3.55rem;
+    letter-spacing: 0.6rem;
+    padding-left: 0.6rem;
+    @media (max-width: 75em) {
+      font-size: 2.5rem;
+    }
+  }
+}

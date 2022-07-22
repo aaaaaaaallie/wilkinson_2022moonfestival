@@ -1,0 +1,262 @@
+@import '@/assets/scss/vars/index.scss';
+
+.header .sub_menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: map-get($color, 'secondary');
+  padding: 0 1rem;
+  display: none;
+  @media (max-width: 75em) {
+    // display: block; // 切版方便先block打開
+    background-color: #470406;
+    position: unset;
+  }
+  li {
+    @media (max-width: 75em) {
+      // margin: 1rem 0 !important;
+      padding: 0 !important;
+    }
+    &.hover {
+      background-color: #fff;
+    }
+  }
+  li + li {
+    border-top: 1px solid rgba(255, 255, 255, 1);
+    @media (max-width: 75em) {
+      border-top: none;
+    }
+  }
+  li:not(:last-child) {
+    a {
+      @media (max-width: 75em) {
+        padding: 1.5rem 0;
+      }
+    }
+  }
+  a {
+    font-size: 1.5rem;
+    padding: 2rem 0;
+    background: none;
+    border: none;
+    @media (max-width: 75em) {
+      font-size: 3rem;
+      padding: 1rem 0;
+    }
+    @media (max-width: 40em) {
+      font-size: 2.6rem;
+    }
+    span {
+      letter-spacing: 0;
+      padding-left: 0;
+    }
+  }
+  &.active {
+    @media (max-width: 75em) {
+      display: block;
+      position: unset;
+    }
+  }
+}
+
+.menu .content {
+  position: relative;
+  height: 100%;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  display: block;
+  // border-radius: 2rem;
+  @media (max-width: 75em) {
+    display: block;
+    background-color: #6e090c;
+    // padding: 6rem 2.5rem 2.5rem;
+    // margin: 7rem auto;
+    height: 100vh;
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.8);
+    padding: 10rem 0 0;
+    // left: 100%;
+    // transition: 0.5s;
+    // -webkit-transition: 0.5s;
+    // height: auto;
+    // border: 4px solid map-get($color, 'slideBorder');
+  }
+  & > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    @media (max-width: 75em) {
+      display: block;
+      height: auto;
+    }
+    & > .btn {
+      width: auto;
+      border-radius: 0;
+      background: none;
+      height: 100%;
+      overflow: visible;
+      position: relative;
+      @media (max-width: 75em) {
+        overflow: hidden;
+        width: 27rem;
+        display: block;
+        text-align: right;
+        border-radius: 0;
+        // &#sign_out {
+        //   & > a {
+        //     background-color: map-get($color, 'slideBorder');
+        //   }
+        // }
+      }
+      & > a {
+        background: none;
+        font-size: 2rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 1rem;
+        font-weight: 500;
+        color: map-get($color, 'primary');
+        border: none;
+        border-radius: 0;
+        @media (max-width: 75em) {
+          // background-color: map-get($color, 'primary');
+          display: block;
+          // font-size: 2.4rem;
+          font-size: 3rem;
+          color: #fff;
+          width: 100%;
+          height: 100%;
+          line-height: 1.5;
+        }
+        @media (max-width: 40em) {
+          span {
+            font-size: 2.6rem;
+          }
+        }
+        &.router-link-active {
+          color: map-get($color, 'menuActive');
+          @media (max-width: 75em) {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+// @media (min-width: 75em) {
+  .menu .content > ul > .btn:hover {
+    background-color: map-get($color, 'secondary');
+    a {
+      color: #fff;
+    }
+    .sub_menu {
+      display: block;
+      @media (max-width: 75em) {
+        background-color: #470406;
+      }
+      li {
+        @media (max-width: 75em) {
+          background-color: #470406;
+        }
+      }
+      a {
+        @media (max-width: 75em) {
+          background-color: #470406;
+        }
+      }
+    }
+  }
+// }
+
+.menu .content .btn i {
+  margin-left: 0.5rem;
+  display: inline-block;
+
+  @media (max-width: 75em) {
+    display: none;
+  }
+}
+
+.menu .content li:not(:last-child) {
+  margin-top: 0;
+  @media (max-width: 75em) {
+    // margin-bottom: 4rem;
+    // margin: 3rem 0;
+    padding: 1rem 0;
+  }
+}
+
+.menu .content li:nth-child(2):hover {
+  @media (max-width: 75em) {
+    padding: 1rem 0 0 0;
+  }
+}
+
+.menu .content .fans {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.75rem 0 2.5rem;
+  @media (max-width: 75em) {
+    justify-content: flex-end;
+    margin-top: 8rem;
+    padding: 0 1rem 0 0;
+  }
+  @media (max-width: 42em) {
+    margin-top: 12rem;
+  }
+  &.pc {
+    @media (max-width: 75em) {
+      display: none;
+    }
+  }
+  &.mb {
+    display: none;
+    @media (max-width: 75em) {
+      display: flex;
+    }
+  }
+}
+
+.menu .content .fans a {
+  width: 4rem;
+  height: 4rem;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  @media (max-width: 75em) {
+    width: 5.8rem;
+    height: 5.8rem;
+  }
+  &.fans_fb {
+    background-image: url(~@/assets/images/icon-fb-1.png);
+    @media (max-width: 75em) {
+      background-image: url(~@/assets/images/icon-fb-2.png);
+    }
+  }
+  &.fans_ig {
+    background-image: url(~@/assets/images/icon-ig-1.png);
+    @media (max-width: 75em) {
+      background-image: url(~@/assets/images/icon-ig-2.png);
+    }
+  }
+  &.fans_official-website {
+    background-image: url(~@/assets/images/icon-official-web-1.png);
+    @media (max-width: 75em) {
+      background-image: url(~@/assets/images/icon-official-web-2.png);
+    }
+  }
+  & + a {
+    margin-left: 1.5rem;
+    @media (max-width: 75em) {
+      margin-left: 2.5rem;
+    }
+  }
+}
