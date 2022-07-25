@@ -26,6 +26,7 @@ export default {
       client_id: process.env.VUE_APP_GOOGLE_ID,
       cookie_policy: 'single_host_origin',
       ux_mode: 'popup',
+      plugin_name: 'wilkinson_202206'
     };
   },
 
