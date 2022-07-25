@@ -3,11 +3,11 @@
     <section class="winner">
       <div class="wrap">
         <PageTitle>抽獎得獎名單</PageTitle>
-         <div class="congrats mb">
+         <div v-if="isDrown" class="congrats mb">
             <span>恭喜得獎</span>
           </div>
         <div class="content">
-          <div class="congrats pc">
+          <div v-if="isDrown" class="congrats pc">
             <span>恭喜得獎</span>
           </div>
           <div v-if="!isDrown">
