@@ -13,6 +13,7 @@
     // display: block; // 切版方便先block打開
     background-color: #470406;
     position: unset;
+    padding: 1rem;
   }
   li {
     @media (max-width: 75em) {
@@ -193,8 +194,11 @@
 }
 
 .menu .content li:nth-child(2):hover {
-  @media (max-width: 75em) {
-    padding: 1rem 0 0 0;
+  .sub_menu {
+    @media (max-width: 75em) {
+      margin-top: 1rem;
+      margin-bottom: -1rem;
+    }
   }
 }
 
