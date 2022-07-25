@@ -46,7 +46,7 @@
               v-model.number="itm.quantity"
             /> -->
             <select class="exchange_item" v-model.number="itm.quantity">
-              <option value="" disabled >請輸入數量</option>
+              <option value="">請輸入數量</option>
               <option :value="i" v-for="i in 10" :key="i+1">{{ i }}</option>
             </select>
           </ExchangePrizesInput>
