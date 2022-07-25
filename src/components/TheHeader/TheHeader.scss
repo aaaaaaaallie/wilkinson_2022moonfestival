@@ -8,12 +8,14 @@
   z-index: 10;
   padding: 0;
   background-color: map-get($color, 'headerBG');
+  // height: 7.6rem;
   @media (max-width: 77.5em) {
     padding: 0 2.5rem;
   }
   @media (max-width: 75em) {
     padding: 0;
     background-color: transparent;
+    height: 8.6rem;
   }
 }
 
@@ -86,13 +88,14 @@
 .header.active {
   // z-index: 10;
   @media (max-width: 75em) {
+    height: auto;
     background-color: rgba(0, 0, 0, 0.3);
     // height: 100%;
   }
   .menu {
-    // left: 0;
-    // transition: 0.3s;
-    display: block;
+    left: 0;
+    transition: 0.3s;
+    // display: block;
     // .content {
     //   @media (max-width: 75em) {
     //     left: 0;
@@ -105,21 +108,21 @@
 }
 
 .menu {
-  display: block;
+  // display: block; /* 7/25 */
   height: auto;
   background-color: transparent;
   width: auto;
   overflow: visible;
   @media (max-width: 75em) {
-    display: none;
+    // display: none;
     // background-color: rgba(0, 0, 0, 0.3);
     // height: calc(100% - 7.6rem);
     height: 100%;
     overflow: auto;
     width: 100%;
     margin-top: -8.6rem;
-    // left: 100%;
-    // transition: 0.5s;
+    left: 100%;
+    transition: 0.5s;
     position: relative;
   }
 }
