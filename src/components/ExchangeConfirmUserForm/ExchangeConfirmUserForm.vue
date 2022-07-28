@@ -151,23 +151,28 @@ export default {
         login_id: this.$store.state.auth.user.login_id,
         event_id: this.$store.state.user.info.event_id,
         device: this.$store.state.auth.user.device,
-        exchange_list: helper.getExchangeList(this.prizes),
+        // exchange_list: [...helper.getExchangeList(this.prizes),{
+        //   awards_id: 2,
+        //   exchange_nu: 1,
+        // }],
+        exchange_list: helper.getExchangeList(this.prizes)
       };
       const addExchangeResponse = await postAddExchange(exchangePostData);
-      const { end, msg, result, point_check } = addExchangeResponse;
+      const { end, msg, result, point_check, award_check, exchange_check } = addExchangeResponse;
       // 資料讀取太快,loading太快結束容易造成畫面閃屏,設定計時器解決閃屏問題
       setTimeout(() => {
         if (end) return this.showEndMessage(msg);
         if (result) return this.exchangeSuccessHandler(addExchangeResponse);
         if (!point_check) return this.showModal('exchange/point');
         // 獎品數量不足(此活動無需此判斷)
-        // if (!res.awards_check) {
-        //   const shortagePrizes = res.exchange_check.filter(
-        //     (itm) => !itm.awards_nu_check
-        //   );
-        //   this.$store.commit('setShortagePrizes', shortagePrizes);
-        //   this.showModal('exchange/shortage');
-        // }
+        if (!award_check) {
+          console.log('獎項不足');
+          const shortagePrizes = exchange_check.filter(
+            (itm) => !itm.awards_nu_check
+          );
+          this.$store.commit('setShortagePrizes', shortagePrizes);
+          this.showModal('exchange/shortage');
+        }
       }, 300);
     },
 

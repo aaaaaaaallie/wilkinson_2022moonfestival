@@ -111,17 +111,21 @@
     &.active .deco {
       z-index: 1;
       position: absolute;
-      font-size: 2rem;
+      font-size: 1.7rem;
       font-weight: 700;
       color: #fff;
       top: 0;
       right: 0;
       text-align: center;
-      padding: 0 1.5rem 0.5rem;
+      padding: 0.5rem;
       line-height: 1.2;
-      background-color: map-get($color, 'deco');
+      background-color: #b3181d;
       display: block;
-      border-radius: 0 0 0 1.5rem;
+      letter-spacing: 0.1rem;
+      // border-radius: 0 0 0 1.5rem;
+      @media (max-width: 75em) {
+        font-size: 2.4rem;
+      }
       .text_remind {
         display: block;
         user-select: none;
@@ -165,12 +169,12 @@
       border-radius: 1rem;
       user-select: none;
     }
-    .italic {
-      font-weight: 900;
-      font-size: 2.8rem;
-      margin: 0 1rem;
-      font-style: italic;
-    }
+    // .italic {
+      // font-weight: 900;
+      // font-size: 2.8rem;
+      // margin: 0 0.05rem;
+      // font-style: italic;
+    // }
   }
   .slider_bg {
     position: absolute;

@@ -69,11 +69,12 @@
     }
   }
   .remind {
-    color: map-get($color, 'light');
+    // color: map-get($color, 'light');
+    color: #febd00;
     position: absolute;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     left: 1rem;
-    top: 105%;
+    top: 90%;
     letter-spacing: 1px;
     padding-left: 1px;
     @media (max-width: 22.0625em) {

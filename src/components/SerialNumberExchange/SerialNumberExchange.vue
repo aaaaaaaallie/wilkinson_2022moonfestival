@@ -40,6 +40,7 @@
               <p
                 v-for="(str, idx) in formateStr(itm.exchange_status_str)"
                 :key="str + idx"
+                :style="{ color: isDrawComplete(idx, itm.exchange_status)}"
               >
                 {{ str }}
               </p>
@@ -87,6 +88,9 @@ export default {
     formateStr(data) {
       return data.split('##');
     },
+    isDrawComplete(idx, status){
+      return idx === 1 && status === 4 ? '#ff2f37' : ''
+    }
   },
 };
 </script>

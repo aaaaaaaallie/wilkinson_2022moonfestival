@@ -87,7 +87,13 @@
       }
       &:nth-child(2) {
         font-size: 1.4rem;
-        color: map-get($color, 'primary');
+        // color: map-get($color, 'primary');
+        color: #febd00;
+      }
+      &:nth-child(2){
+        &.lottery_color {
+          color: #ff2f37;
+        }
       }
     }
   }

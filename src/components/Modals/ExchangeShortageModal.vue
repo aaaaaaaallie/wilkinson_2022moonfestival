@@ -7,7 +7,7 @@
     </template>
 
     <template #body>
-      <span>獎品剩餘數量不足</span>
+      <span>獎品<a class="not_enough">剩餘數量不足</a></span>
       <span>請重新選取欲兌換項目</span>
     </template>
 

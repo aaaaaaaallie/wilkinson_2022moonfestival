@@ -38,17 +38,44 @@
             :prize="itm"
           >
             <!-- <input
+              v-if="typeof itm.awards_last_nu === 'string'"
               class="exchange_item"
               type="number"
               placeholder="請輸入數量"
               min="0"
               inputmode="numeric"
               v-model.number="itm.quantity"
-            /> -->
-            <select class="exchange_item" v-model.number="itm.quantity">
+            />
+            <select
+              v-else
+              class="exchange_item"
+              v-model.number="itm.quantity"
+              :disabled="itm.awards_last_nu === 0"
+            >
+              <option value="" disabled>請輸入數量</option>
+              <option
+                v-for="(number) in itm.awards_last_nu"
+                :key="itm.awards_item + number"
+                :value="number"
+              >
+                {{ number }}
+              </option>
+            </select> -->
+            <select
+              class="exchange_item"
+              v-model.number="itm.quantity"
+              :disabled="itm.awards_last_nu === 0"
+            >
               <option value="">請輸入數量</option>
-              <option :value="i" v-for="i in 10" :key="i+1">{{ i }}</option>
+              <option
+                v-for="number in (itm.awards_last_nu === '∞' || itm.awards_last_nu >= 30 ? 30 : itm.awards_last_nu)"
+                :key="itm.awards_item + number"
+                :value="number"
+              >
+                {{ number }}
+              </option>
             </select>
+
           </ExchangePrizesInput>
         </div>
       </div>
@@ -128,6 +155,13 @@ export default {
     exchangePrizes() {
       return this.prizes.filter((itm) => !itm.lottery);
     },
+
+    // isSelectPrizes(itm){
+    //   return itm.awards_last_nu === 'string' ? 30 : 30
+    // }
+  },
+  mounted (){
+    console.log(this.lotteryPrizes)
   },
   methods: {
     submit() {
@@ -148,6 +182,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import './ExchangePrizes.scss';
 </style>

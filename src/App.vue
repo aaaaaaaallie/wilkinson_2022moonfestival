@@ -39,14 +39,14 @@ export default {
     const activityTimeResult = await getTime();
     const { result, msg_type, msg, winning } = activityTimeResult;
     this.$store.commit('setWinnerList', winning);
+    console.log(result, msg_type)
     if (!result) return;
-    if (msg_type === '00') return routeToComingSoonPage();
-    alert(msg);
-
-    function routeToComingSoonPage() {
+    if (msg_type === '00') {
       this.$store.commit('setComingSoon');
       this.$router.replace({ name: 'coming-soon' });
+      return
     }
+    alert(msg);
   },
   async created() {
     const {
