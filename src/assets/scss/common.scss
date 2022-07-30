@@ -84,6 +84,15 @@ main {
 .code_content {
   width: 64.3%;
   padding-top: 3rem;
+  @media (min-width: 1500px){
+    margin-left: 3%;
+  }
+  @media (max-width: 1499px){
+    margin-left: 2%;
+  }
+  @media (max-width: 1300px){
+    margin-left: 0;
+  }
   @media (max-width: 75em) {
     width: 100%;
     padding-top: 4vw;
@@ -117,6 +126,13 @@ select {
   background-color: transparent;
   border: 1px solid #ffffff;
   color: #ffffff;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+}
+input:focus:-moz-placeholder {
+  opacity: 0;
 }
 
 select {

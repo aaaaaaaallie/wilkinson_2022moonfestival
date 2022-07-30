@@ -20,7 +20,7 @@
     }
     @media (max-width: 1023px) {
       // width: 86%;
-      padding: 2.5rem;
+      padding: 2.5rem 6rem;
     }
     @media (max-width: 64em) {
       // width: 89.5%;
@@ -77,15 +77,17 @@
       // }
     }
     .swiper-button-prev {
-      // background-image: url(~@/assets/images/icon-arrow-2.png);
-      left: 6.5rem;
-      @media (max-width: 64em) {
-        left: 1.5rem;
+      @media (max-width: 1023px) {
+        background-image: url(~@/assets/images/icon-arrow-prev.png);
+        left: 0;
       }
+      // @media (max-width: 64em) {
+      //   left: 1.5rem;
+      // }
     }
     .swiper-button-next {
       @media (max-width: 1023px) {
-        background-image: url(~@/assets/images/icon-arrow-3.png);
+        background-image: url(~@/assets/images/icon-arrow-next.png);
         // right: -3.2rem;
         right: 0;
       }
@@ -123,9 +125,9 @@
       display: block;
       letter-spacing: 0.1rem;
       // border-radius: 0 0 0 1.5rem;
-      @media (max-width: 75em) {
-        font-size: 2.4rem;
-      }
+      // @media (max-width: 75em) {
+      //   font-size: 2.4rem;
+      // }
       .text_remind {
         display: block;
         user-select: none;

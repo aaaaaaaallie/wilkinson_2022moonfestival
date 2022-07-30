@@ -10,7 +10,16 @@
 
 .winner > .wrap {
   width: 64.3%;
-  padding: 6rem 0 0;
+  padding: 3rem 0 0;
+  @media (min-width: 1500px){
+    margin-left: 3%;
+  }
+  @media (max-width: 1499px){
+    margin-left: 2%;
+  }
+  @media (max-width: 1300px){
+    margin-left: 0;
+  }
   @media (max-width: 75em) {
     padding: 0 8%;
     width: 100%;

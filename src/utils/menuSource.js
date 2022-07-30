@@ -41,7 +41,7 @@ export default {
   ],
   fansItems: [
     {
-      path: 'https://www.facebook.com/calpis.tw',
+      path: 'https://www.facebook.com/wilkinsontw/',
       name: 'fb',
     },
     // {
@@ -49,7 +49,7 @@ export default {
     //   name: 'ig',
     // },
     {
-      path: 'https://asahisoftdrinks.com.tw/calpis',
+      path: 'https://asahisoftdrinks.com.tw/wilkinson/',
       name: 'official-website',
     },
   ],

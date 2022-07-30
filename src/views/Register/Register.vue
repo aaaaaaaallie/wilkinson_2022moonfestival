@@ -6,7 +6,10 @@
           <PageTitle>輸入序號</PageTitle>
           <PageTabs />
           <div class="content">
-            <UserName :name="$store.getters['auth/username']" />
+            <div class="username_box">
+              <UserName :name="$store.getters['auth/username']" />
+              <span class="small_text">，您好</span>
+            </div>
             <div class="msg">
               <span>*1組序號可兌換1點</span>
             </div>

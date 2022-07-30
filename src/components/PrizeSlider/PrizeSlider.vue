@@ -87,13 +87,11 @@ export default {
             allowTouchMove: false,
           },
           1024: {
-            // slidesPerView: 4.2,
             slidesPerView: 5,
             allowTouchMove: true,
           },
           640: {
-            // slidesPerView: 2.6,
-            slidesPerView: 2,
+            slidesPerView: 3,
             allowTouchMove: true,
           },
           0: {

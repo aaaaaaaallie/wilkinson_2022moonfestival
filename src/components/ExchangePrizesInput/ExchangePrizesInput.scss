@@ -52,19 +52,30 @@
   }
   .group {
     width: 33%;
+    @media (max-width: 75em) {
+      width: 34%;
+    }
     select,
     input {
       height: 100%;
       padding: 0 1rem;
       // background-color: map-get($color, 'primary');
       color: #fff;
-      font-size: 1.8rem;
+      font-size: 2.1rem;
       text-align: center;
+      @media (max-width: 75em) {
+        font-size: 2rem;
+      }
       @media (max-width: 22.0625em) {
         font-size: 1.8rem;
       }
       &::placeholder {
+        font-size: 2.1rem;
+        font-weight: 400;
         color: #fff;
+        @media (max-width: 75em) {
+          font-size: 2rem;
+        }
       }
     }
   }
@@ -82,6 +93,14 @@
     }
   }
 }
+
+// #exchange_form .input_wrap .group input::placeholder,
+// #exchange_form .input_wrap .group select::placeholder {
+//   font-size: 2.1rem;
+// }
+// #exchange_form .input_wrap .group select {
+//   font-size: 1.8rem;
+// }
 
 #exchange_prize .gift_point {
   color: #ff2f37;
