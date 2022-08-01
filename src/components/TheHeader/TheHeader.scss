@@ -15,7 +15,8 @@
   @media (max-width: 75em) {
     padding: 0;
     background-color: transparent;
-    height: 8.6rem;
+    z-index: 1;
+    // height: 8.6rem;
   }
 }
 
@@ -62,10 +63,6 @@
     background-size: 100% 100%;
     top: auto;
   }
-  // @media (max-width: 40em) {
-    
-    
-  // }
 }
 
 .header .menu_open {
@@ -86,37 +83,36 @@
 }
 
 .header.active {
-  // z-index: 10;
   @media (max-width: 75em) {
     height: auto;
     background-color: rgba(0, 0, 0, 0.3);
-    // height: 100%;
+    z-index: 10;
   }
   .menu {
     left: 0;
-    transition: 0.3s;
-    // display: block;
-    // .content {
-    //   @media (max-width: 75em) {
-    //     left: 0;
-    //   }
-    // }
+    transition: 0.5s;
   }
-  // .menu_open {
-  //   display: none;
-  // }
+  .menu_bg {
+    @media (max-width: 75em) {
+      // width: 100%;
+      width: 300%;
+      height: 100%;
+      // background-color: rgba(0, 0, 0, 0.3);
+      position: absolute;
+      top: 0;
+      left: -81rem;
+      // left: 0;
+      transition: 0s;
+    }
+  }
 }
 
 .menu {
-  // display: block; /* 7/25 */
   height: auto;
   background-color: transparent;
   width: auto;
   overflow: visible;
   @media (max-width: 75em) {
-    // display: none;
-    // background-color: rgba(0, 0, 0, 0.3);
-    // height: calc(100% - 7.6rem);
     height: 100%;
     overflow: auto;
     width: 100%;

@@ -9,11 +9,13 @@
         <li
           v-for="(subNav, subIndex) in nav.children"
           :key="subNav.page + subIndex"
+          @click="subMenuClass()"
         >
           <AppLink
             :to="`${nav.path}#${subNav.page}`"
             :ga="`menu_${nav.path}-${subNav.page}`"
             @click="$store.dispatch('showMenu', false)"
+            :class="{'location-active': true }"
           >
             <span>{{ subNav.text }}</span>
           </AppLink>
@@ -58,6 +60,7 @@ export default {
   data() {
     return {
       fansItems: menuSource.fansItems,
+      // isAddClass: false,
     };
   },
   computed: {
@@ -110,7 +113,27 @@ export default {
     handlePath({hover, path}) {
       if(hover) return 'false';
       return {name:path}
-    }
+    },
+    subMenuClass() {
+      // console.log(this.$router.currentRoute._value.hash);
+      // const routerValue = this.$router.currentRoute._value.hash;
+      console.log(window.location.href);
+      var locationHref = window.location.href;
+      if(locationHref.includes('list') || locationHref.includes('exchange')){
+        console.log('click');
+        return true;
+      } else {
+        return false;
+      }
+      
+      // if(locationHref.indexOf('list') !== -1 ){
+      //   console.log('list');
+      //   // this.isAddClass = true;
+      // } else {
+      //   console.log('exchange');
+      //   // this.isAddClass = false;
+      // }
+    },
   },
 };
 </script>

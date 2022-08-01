@@ -167,6 +167,12 @@
         }
       }
       a {
+        // &.router-link-active {
+        //   color: map-get($color, 'menuActive');
+        //   @media (max-width: 75em) {
+        //     color: #fff;
+        //   }
+        // }
         @media (max-width: 75em) {
           background-color: #470406;
         }

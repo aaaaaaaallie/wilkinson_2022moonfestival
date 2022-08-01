@@ -15,10 +15,12 @@
           <div class="content">
               <div class="menu_close" @click="showMenu(false)"></div>
               <TheNavigation />
+              <div class="menu_bg" @click="showMenu(false)"></div>
           </div>
         </div>
       </div>
     </div>
+    <!-- <div class="menu_bg" @click="showMenu(false)"></div> -->
   </header>
 </template>
 
