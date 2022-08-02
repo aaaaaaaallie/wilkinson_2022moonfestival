@@ -93,6 +93,30 @@
       display: block;
       height: auto;
     }
+    & > li {
+      &.mb {
+        display: none;
+      }
+      @media (max-width: 75em) {
+        &.pc {
+          display: none;
+        }
+        &.mb {
+          display: block;
+        }
+      }
+      
+    }
+    & > li:nth-child(2) {
+      & > a {
+        &.active {
+          color: map-get($color, 'menuActive');
+          @media (max-width: 75em) {
+            color: #fff;
+          }
+        }
+      }
+    }
     & > .btn {
       width: auto;
       border-radius: 0;
@@ -165,16 +189,18 @@
         @media (max-width: 75em) {
           background-color: #470406;
         }
-      }
-      a {
-        // &.router-link-active {
-        //   color: map-get($color, 'menuActive');
-        //   @media (max-width: 75em) {
-        //     color: #fff;
-        //   }
-        // }
-        @media (max-width: 75em) {
-          background-color: #470406;
+        a {
+          @media (max-width: 75em) {
+            background-color: #470406;
+          }
+        }
+        &.active {
+          a {
+            color: #febd00;
+            @media (max-width: 75em) {
+              color: #fff;
+            }
+          }
         }
       }
     }
@@ -199,7 +225,8 @@
   }
 }
 
-.menu .content li:nth-child(2):hover {
+.menu .content li:nth-child(2):hover,
+.menu .content li:nth-child(8):hover {
   .sub_menu {
     @media (max-width: 75em) {
       margin-top: 1rem;

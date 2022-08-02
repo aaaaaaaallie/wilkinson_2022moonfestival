@@ -78,6 +78,9 @@
         }
       }
     }
+    // input {
+    //   text-align: initial;
+    // }
   }
   .remind {
     // color: map-get($color, 'light');
@@ -94,19 +97,19 @@
   }
 }
 
-// #exchange_form .input_wrap .group input::placeholder,
-// #exchange_form .input_wrap .group select::placeholder {
-//   font-size: 2.1rem;
-// }
-// #exchange_form .input_wrap .group select {
-//   font-size: 1.8rem;
-// }
-
-#exchange_prize .gift_point {
+#exchange_prize .input_wrap .gift_point {
   color: #ff2f37;
+  padding-left: 5%;
+  @media (max-width: 75em) {
+    padding-left: 4%;
+  }
+  @media (max-width: 420px) {
+    padding-left: 5.5%;
+  }
 }
 
 #lottery_prize .gift_point {
   color: #febd00;
+
 }
 

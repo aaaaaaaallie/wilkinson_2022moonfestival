@@ -1,6 +1,49 @@
 <template>
   <ul>
-    <li v-for="(nav, idx) in menu" :key="nav.path + idx" class="btn">
+    <li v-for="(nav, idx) in menu" :key="nav.path + idx" class="btn" >
+      <AppLink :to="handlePath(nav)" :ga="`menu_${nav.path}`" :class="{active: isPath === `${nav.path}`}">
+        <span>{{ nav.text }}</span>
+        <i v-if="nav.children" class="fas fa-caret-down"></i>
+      </AppLink>
+      <ul v-if="nav.children" class="sub_menu">
+        <li
+          v-for="(subNav, subIndex) in nav.children"
+          :key="subNav.page + subIndex"
+          :class="{active: hash === `#${subNav.page}`}"
+        >
+          <AppLink
+            :to="`${nav.path}#${subNav.page}`"
+            :ga="`menu_${nav.path}-${subNav.page}`"
+            @click="$store.dispatch('showMenu', false)"
+          >
+            <span>{{ subNav.text }}</span>
+          </AppLink>
+        </li>
+      </ul>
+    </li>
+
+    <!-- <li v-for="(nav, idx) in menu" :key="nav.path + idx" class="btn pc">
+      <AppLink :to="{ name: nav.path }" :ga="`menu_${nav.path}`">
+        <span>{{ nav.text }}</span>
+        <i v-if="nav.children" class="fas fa-caret-down"></i>
+      </AppLink>
+      <ul v-if="nav.children" class="sub_menu">
+        <li
+          v-for="(subNav, subIndex) in nav.children"
+          :key="subNav.page + subIndex"
+          :class="{active: hash === `#${subNav.page}`}"
+        >
+          <AppLink
+            :to="`${nav.path}#${subNav.page}`"
+            :ga="`menu_${nav.path}-${subNav.page}`"
+            @click="$store.dispatch('showMenu', false)"
+          >
+            <span>{{ subNav.text }}</span>
+          </AppLink>
+        </li>
+      </ul>
+    </li>
+    <li v-for="(nav, idx) in menu" :key="nav.path + idx" class="btn mb">
       <AppLink :to="handlePath(nav)" :ga="`menu_${nav.path}`">
         <span>{{ nav.text }}</span>
         <i v-if="nav.children" class="fas fa-caret-down"></i>
@@ -9,19 +52,18 @@
         <li
           v-for="(subNav, subIndex) in nav.children"
           :key="subNav.page + subIndex"
-          @click="subMenuClass()"
+          :class="{active: hash === `#${subNav.page}`}"
         >
           <AppLink
             :to="`${nav.path}#${subNav.page}`"
             :ga="`menu_${nav.path}-${subNav.page}`"
             @click="$store.dispatch('showMenu', false)"
-            :class="{'location-active': true }"
           >
             <span>{{ subNav.text }}</span>
           </AppLink>
         </li>
       </ul>
-    </li>
+    </li> -->
     <li class="fans pc">
       <AppLink
         v-for="fan in fansItems"
@@ -60,7 +102,8 @@ export default {
   data() {
     return {
       fansItems: menuSource.fansItems,
-      // isAddClass: false,
+      hash: null,
+      isPath: null,
     };
   },
   computed: {
@@ -70,6 +113,18 @@ export default {
         ? menuSource.navItems
         : menuSource.navItems.filter((itm) => !itm.requestAuth);
     },
+  },
+  watch: {
+    '$route.hash'(newValue){
+      this.hash = newValue
+    },
+    '$route.path'(newPath){
+      console.log(newPath)
+      // console.log(this.path)
+      if(newPath.includes('serial-number')){
+        this.isPath = newPath
+      }
+    }
   },
   methods: {
     logout() {
@@ -113,26 +168,6 @@ export default {
     handlePath({hover, path}) {
       if(hover) return 'false';
       return {name:path}
-    },
-    subMenuClass() {
-      // console.log(this.$router.currentRoute._value.hash);
-      // const routerValue = this.$router.currentRoute._value.hash;
-      console.log(window.location.href);
-      var locationHref = window.location.href;
-      if(locationHref.includes('list') || locationHref.includes('exchange')){
-        console.log('click');
-        return true;
-      } else {
-        return false;
-      }
-      
-      // if(locationHref.indexOf('list') !== -1 ){
-      //   console.log('list');
-      //   // this.isAddClass = true;
-      // } else {
-      //   console.log('exchange');
-      //   // this.isAddClass = false;
-      // }
     },
   },
 };

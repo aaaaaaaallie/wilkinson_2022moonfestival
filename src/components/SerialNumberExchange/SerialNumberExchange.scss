@@ -51,13 +51,16 @@
     display: block;
     width: 100%;
   }
-  &:nth-child(1) {
+  // &:nth-child(1) {
     // font-style: italic;
-  }
+  // }
   &:nth-child(2) {
     // text-align: left;
     text-align: center;
     flex-direction: unset;
+    @media (max-width: 75em) {
+      flex-direction: column;
+    }
     .lottery_text {
         color: #ff2f37;
       // color: map-get($color, 'light');

@@ -17,6 +17,8 @@
 </template>
 
 <script>
+// import { getBrowserVersion } from '@/utils';
+
 export default {
   props: {
     prize: {
@@ -32,6 +34,25 @@ export default {
       return false;
     },
   },
+  methods: {
+    isMobile() {
+      let flag = !!window.navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+      console.log(flag);
+      // console.log(window.navigator.userAgent);
+      return flag;
+    }
+  },
+  mounted() {
+    // console.log(this.isMobile)
+    // console.log(window.navigator.userAgent);
+    // if(this.isMobile) {
+    //   // console.log("ios");
+    //   // alert('ios')
+    // }else {
+    //   // console.log("pc端");
+    //   // alert('pc')
+    // }
+  }
 };
 </script>
 

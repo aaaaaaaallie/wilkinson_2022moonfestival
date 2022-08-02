@@ -112,6 +112,22 @@ export default {
       const hash = this.$route.hash.replace('#', '');
       return !hash ? 'list' : hash;
     },
+    user() {
+      return this.$store.state.auth.user;
+    },
+  },
+  watch: {
+    hash() {
+      this.updateUserData();
+    },
+  },
+  methods: {
+    updateUserData() {
+      this.$store.dispatch('user/getUserData', this.user);
+    },
+  },
+  mounted() {
+    this.updateUserData();
   },
   unmounted() {
     this.$store.dispatch('showLoader', false);

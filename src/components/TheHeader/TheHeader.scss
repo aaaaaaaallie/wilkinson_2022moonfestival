@@ -15,8 +15,11 @@
   @media (max-width: 75em) {
     padding: 0;
     background-color: transparent;
-    z-index: 1;
-    // height: 8.6rem;
+    // z-index: 1;
+    height: 8.6rem;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
@@ -84,6 +87,7 @@
 
 .header.active {
   @media (max-width: 75em) {
+    overflow: hidden;
     height: auto;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 10;
