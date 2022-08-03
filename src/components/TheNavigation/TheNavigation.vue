@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li v-for="(nav, idx) in menu" :key="nav.path + idx" class="btn" >
-      <AppLink :to="handlePath(nav)" :ga="`menu_${nav.path}`" :class="{active: isPath === `${nav.path}`}">
+      <AppLink :to="handlePath(nav)" :ga="`menu_${nav.path}`" :class="{active: isMenuActive(nav.path)}">
         <span>{{ nav.text }}</span>
         <i v-if="nav.children" class="fas fa-caret-down"></i>
       </AppLink>
@@ -21,49 +21,6 @@
         </li>
       </ul>
     </li>
-
-    <!-- <li v-for="(nav, idx) in menu" :key="nav.path + idx" class="btn pc">
-      <AppLink :to="{ name: nav.path }" :ga="`menu_${nav.path}`">
-        <span>{{ nav.text }}</span>
-        <i v-if="nav.children" class="fas fa-caret-down"></i>
-      </AppLink>
-      <ul v-if="nav.children" class="sub_menu">
-        <li
-          v-for="(subNav, subIndex) in nav.children"
-          :key="subNav.page + subIndex"
-          :class="{active: hash === `#${subNav.page}`}"
-        >
-          <AppLink
-            :to="`${nav.path}#${subNav.page}`"
-            :ga="`menu_${nav.path}-${subNav.page}`"
-            @click="$store.dispatch('showMenu', false)"
-          >
-            <span>{{ subNav.text }}</span>
-          </AppLink>
-        </li>
-      </ul>
-    </li>
-    <li v-for="(nav, idx) in menu" :key="nav.path + idx" class="btn mb">
-      <AppLink :to="handlePath(nav)" :ga="`menu_${nav.path}`">
-        <span>{{ nav.text }}</span>
-        <i v-if="nav.children" class="fas fa-caret-down"></i>
-      </AppLink>
-      <ul v-if="nav.children" class="sub_menu">
-        <li
-          v-for="(subNav, subIndex) in nav.children"
-          :key="subNav.page + subIndex"
-          :class="{active: hash === `#${subNav.page}`}"
-        >
-          <AppLink
-            :to="`${nav.path}#${subNav.page}`"
-            :ga="`menu_${nav.path}-${subNav.page}`"
-            @click="$store.dispatch('showMenu', false)"
-          >
-            <span>{{ subNav.text }}</span>
-          </AppLink>
-        </li>
-      </ul>
-    </li> -->
     <li class="fans pc">
       <AppLink
         v-for="fan in fansItems"
@@ -103,7 +60,7 @@ export default {
     return {
       fansItems: menuSource.fansItems,
       hash: null,
-      isPath: null,
+      path: null,
     };
   },
   computed: {
@@ -118,12 +75,8 @@ export default {
     '$route.hash'(newValue){
       this.hash = newValue
     },
-    '$route.path'(newPath){
-      console.log(newPath)
-      // console.log(this.path)
-      if(newPath.includes('serial-number')){
-        this.isPath = newPath
-      }
+    '$route.path'(newValue){
+      this.path = newValue
     }
   },
   methods: {
@@ -169,6 +122,9 @@ export default {
       if(hover) return 'false';
       return {name:path}
     },
+    isMenuActive(menuPath) {
+      return this.path === `${process.env.VUE_APP_SCSS_URL}${menuPath}`;
+    }
   },
 };
 </script>
