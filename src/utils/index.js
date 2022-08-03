@@ -56,11 +56,13 @@ export const StopBodyScroll = (function () {
   StopBodyScroll.prototype.fixedBody = function () {
     this.pageTop = window.scrollY;
     this.html.style.height = window.screen.availHeight + 'px';
+    this.html.style.overflow = 'hidden';
     this.body.style.position = 'fixed';
     this.body.style.top = -this.pageTop + 'px';
   };
   StopBodyScroll.prototype.scrollBody = function () {
     this.html.style.height = 'auto';
+    this.html.style.overflow = '';
     this.body.style.position = '';
     this.body.style.top = '';
     window.scrollTo(0, this.pageTop);

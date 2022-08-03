@@ -26,6 +26,9 @@ body {
   // padding-bottom: 5rem;
   line-height: 1.3;
   width: 100%;
+  @media (max-width: 75em) {
+    min-height: auto;
+  }
   .login {
     display: block;
   }
@@ -217,13 +220,13 @@ input[type='checkbox']:checked ~ .checkbox_style i {
 .inner_page_wrap {
   padding: 0 0 5rem 4%;
   @media (max-width: 75em) {
-    padding: 0 4% 50px;
+    padding: 0 4% 10px;
     .pageTitle {
       display: none;
     }
   }
   @media (max-width: 40em) {
-    padding: 0 2.5rem 50px;
+    padding: 0 2.5rem 10px;
   }
 }
 
