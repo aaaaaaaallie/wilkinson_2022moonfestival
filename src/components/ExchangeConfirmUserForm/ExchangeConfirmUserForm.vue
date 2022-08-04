@@ -152,7 +152,7 @@ export default {
         event_id: this.$store.state.user.info.event_id,
         device: this.$store.state.auth.user.device,
         // exchange_list: [...helper.getExchangeList(this.prizes),{
-        //   awards_id: 2,
+        //   awards_id: 4,
         //   exchange_nu: 1,
         // }],
         exchange_list: helper.getExchangeList(this.prizes)
