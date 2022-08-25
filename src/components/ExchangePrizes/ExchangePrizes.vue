@@ -165,6 +165,7 @@ export default {
   },
   methods: {
     submit() {
+      // alert('威金森 月來越強活動\n活動已結束，\n非常感謝各位熱烈的參與！')
       if (!this.hasSelectedPrizes) return alert('請選擇兌換項目');
       if (this.isNotEnoughPoints) return this.showNotEnoughPointPopup();
       this.showConfirmPage();

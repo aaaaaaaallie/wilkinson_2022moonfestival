@@ -120,6 +120,9 @@
 }
 
 .subtitle {
+  @media (max-width: 75em) {
+    font-size: 2.4rem;
+  }
   @media (max-width: 640px) {
     align-items: baseline;
     &::before {
@@ -129,6 +132,13 @@
   }
   span {
     text-align: left;
+  }
+}
+
+.subtitle > span {
+  @media (max-width: 75em) {
+    letter-spacing: .4rem;
+    padding-left: 0.5rem;
   }
 }
 
