@@ -3,12 +3,12 @@
   <!-- <AppSubtitle></AppSubtitle> -->
   <ul class="text">
     <li>
-      <span>吿Ｏ人</span>
-      <span>0985-XXX-888</span>
+      <span>何X蓉</span>
+      <span>0975-XXX287</span>
     </li>
     <li>
-      <span>吿&emsp;Ｏ</span>
-      <span>0985-XXX-888</span>
+      <span>莊X寰</span>
+      <span>0975-XXX217</span>
     </li>
   </ul>
 </template>
