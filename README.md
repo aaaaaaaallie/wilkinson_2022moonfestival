@@ -1,4 +1,4 @@
-# 可爾必思 威金森 2022 中秋節序號登錄活動
+# 威金森 2022 中秋節序號登錄活動
 
 nodejs-version：v12.14.0
 
@@ -11,7 +11,7 @@ Vue3、vue-cli4、vuex、scss、RWD、Google api、Facebook api
 https://www.asahisoftdrinks.com.tw/wilkinson_2022moonfestival/
 
 程式碼：<br>
-https://github.com/aaaaaaaallie/wilkinson_2022moonfestivallpis-202202
+https://github.com/aaaaaaaallie/wilkinson_2022moonfestival
 
 首頁
 ![1](https://user-images.githubusercontent.com/37163473/180384049-f27a108e-6ef7-4aed-b2bf-41fbe9f678d7.jpg)
